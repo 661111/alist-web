@@ -177,7 +177,8 @@ export const isIndeterminate = () => {
   return selectedNum() > 0 && selectedNum() < objStore.objs.length
 }
 
-export type LayoutType = "list" | "grid" | "image"
+export type LayoutType = "grid" | "list" | "image"
+const [layout, setLayout] = createStorageSignal<LayoutType>("layout", "list")
 const [pathname, setPathname] = createSignal<string>(location.pathname)
 const layoutRecord: Record<string, LayoutType> = (() => {
   try {
