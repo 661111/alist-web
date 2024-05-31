@@ -279,19 +279,6 @@ const Login = () => {
             {ldapLoginTips}
           </Checkbox>
         </Show>
-        <Button
-          w="$full"
-          colorScheme="accent"
-          onClick={() => {
-            changeToken()
-            to(
-              decodeURIComponent(searchParams.redirect || base_path || "/"),
-              true,
-            )
-          }}
-        >
-          {t("login.use_guest")}
-        </Button>
         <Flex
           mt="$2"
           justifyContent="space-evenly"
@@ -299,7 +286,6 @@ const Login = () => {
           color="$neutral10"
           w="$full"
         >
-          <SwitchLanguageWhite />
           <SwitchColorMode />
           <SSOLogin />
           <Show when={AuthnSignEnabled}>
