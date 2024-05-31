@@ -144,20 +144,11 @@ const Profile = () => {
               }}
             >
               <AlertIcon mr="$2_5" />
-              <AlertTitle mr="$2_5">{t("users.guest-tips")}</AlertTitle>
-              <AlertDescription>{t("users.modify_nothing")}</AlertDescription>
+              <Text>{t("洗洗睡吧不公开")}</Text>
+              <Text>{t("点击左侧回到主页")}</Text>
             </Alert>
             <HStack spacing="$2">
-              <Text>{t("global.have_account")}</Text>
-              <Text
-                color="$info9"
-                as={LinkWithBase}
-                href={`/@login?redirect=${encodeURIComponent(
-                  location.pathname,
-                )}`}
-              >
-                {t("global.go_login")}
-              </Text>
+              <img src="http://pic.rmb.bdstatic.com/bjh/705fab74d0dfc00bae9166288f23b4dc.png" width="50%" height ="50%"></img>
             </HStack>
           </>
         }
@@ -302,15 +293,6 @@ const Profile = () => {
           {t("users.add_webauthn")}
         </Button>
       </Show>
-      <HStack wrap="wrap" gap="$2" mt="$2">
-        <For each={UserPermissions}>
-          {(item, i) => (
-            <PermissionBadge can={UserMethods.can(me(), i())}>
-              {t(`users.permissions.${item}`)}
-            </PermissionBadge>
-          )}
-        </For>
-      </HStack>
     </VStack>
   )
 }
