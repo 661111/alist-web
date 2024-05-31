@@ -7,7 +7,7 @@ export const FullScreenLoading = () => {
       <Spinner
         thickness="4px"
         speed="0.65s"
-        emptyColor="$neutral4"
+        emptyColor="tomato"
         color={getMainColor()}
         size="xl"
       />
@@ -34,14 +34,13 @@ export const FullLoading = (props: {
       <Spinner
         thickness={`${merged.thickness}px`}
         speed="0.65s"
-        emptyColor="$neutral4"
+        emptyColor="tomato"
         color={getMainColor()}
         size={merged.size as any}
       />
     </Center>
   )
 }
-
 export const MaybeLoading = (props: {
   children?: JSXElement
   loading: boolean
@@ -58,7 +57,7 @@ export const CenterLoading = <C extends ElementType = "div">(
 ) => {
   return (
     <Center w="$full" h="$full">
-      <Spinner color={getMainColor()} {...props} />
+      <Spinner color="tomato" {...props} />
     </Center>
   )
 }
